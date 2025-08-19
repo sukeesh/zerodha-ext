@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Zerodha Holdings Expense Ratio",
+  "version": "1.0",
+  "description": "Adds expense ratio column to Zerodha Kite holdings table",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://b2b.tijorifinance.com/*",
+    "https://kite.zerodha.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://kite.zerodha.com/holdings/equity*"], 
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

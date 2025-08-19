@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Zerodha Holdings Extension</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .info { background: #e7f3ff; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .steps { background: #f8f9fa; padding: 15px; border-radius: 5px; }
+        .step { margin: 10px 0; }
+        code { background: #f1f1f1; padding: 2px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Zerodha Holdings Expense Ratio Extension - Test Guide</h1>
+    
+    <div class="info">
+        <strong>Note:</strong> This extension only works on the actual Zerodha Kite holdings page: 
+        <code>https://kite.zerodha.com/holdings/equity</code>
+    </div>
+
+    <div class="steps">
+        <h2>Installation & Testing Steps:</h2>
+        
+        <div class="step">
+            <strong>1. Install the Extension:</strong>
+            <ul>
+                <li>Open Chrome and go to <code>chrome://extensions/</code></li>
+                <li>Enable "Developer mode" (toggle in top-right)</li>
+                <li>Click "Load unpacked" and select your extension folder</li>
+                <li>Verify "Zerodha Holdings Expense Ratio" appears in the list</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <strong>2. Test the Extension:</strong>
+            <ul>
+                <li>Log in to your Zerodha Kite account</li>
+                <li>Navigate to: <code>https://kite.zerodha.com/holdings/equity</code></li>
+                <li>Wait for the page to load completely</li>
+                <li>Look for a new "Exp. Ratio" column in your holdings table</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <strong>3. Check Console Logs:</strong>
+            <ul>
+                <li>Press F12 to open Developer Tools</li>
+                <li>Go to the "Console" tab</li>
+                <li>Look for messages like "Zerodha Holdings Expense Ratio Extension loaded"</li>
+                <li>Check for any error messages in red</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <strong>4. Expected Results:</strong>
+            <ul>
+                <li>New column appears after "LTP" column</li>
+                <li>Shows "Loading..." initially with a spinner</li>
+                <li>Updates to show expense ratios like "0.17%", "0.05%", etc.</li>
+                <li>Processes one instrument at a time (1-second delays)</li>
+                <li>Some entries may show "N/A" if data is unavailable</li>
+                <li>Console shows processing messages for each symbol</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <strong>5. Cache Testing:</strong>
+            <ul>
+                <li>Refresh the page - data should load faster (from cache)</li>
+                <li>Check Chrome storage: Go to Developer Tools → Application → Storage → Local Storage</li>
+                <li>Look for "expenseRatioCache" entry</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Troubleshooting:</h2>
+    <ul>
+        <li><strong>Column not appearing:</strong> Make sure you're on the exact URL above and extension is enabled</li>
+        <li><strong>Shows "Error":</strong> Check console for network issues or API problems</li>
+        <li><strong>Shows "N/A":</strong> Some instruments may not have expense ratio data available</li>
+        <li><strong>Extension not loading:</strong> Verify all files are in the same folder and manifest.json is valid</li>
+    </ul>
+
+    <h2>Files Included:</h2>
+    <ul>
+        <li><code>manifest.json</code> - Extension configuration</li>
+        <li><code>content.js</code> - Main logic for table modification</li>
+        <li><code>background.js</code> - Service worker for API calls (bypasses CORS)</li>
+        <li><code>styles.css</code> - Styling for the new column</li>
+        <li><code>README.md</code> - Detailed documentation</li>
+        <li><code>test.html</code> - This test guide</li>
+    </ul>
+
+    <div class="info">
+        <strong>Success Indicator:</strong> If you see expense ratios like "0.17%" appearing in a new column 
+        on your holdings page, the extension is working correctly!
+    </div>
+</body>
+</html>

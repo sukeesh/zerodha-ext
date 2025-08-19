@@ -1,0 +1,48 @@
+/* Expense Ratio Column Styling */
+.expense-ratio-header {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-right: 1px solid #dee2e6;
+}
+
+.expense-ratio-cell {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: #6c757d;
+  border-right: 1px solid #dee2e6;
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+
+.expense-ratio-cell[data-loading="true"] {
+  color: #007bff;
+  font-style: italic;
+}
+
+.expense-ratio-cell[data-error="true"] {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.expense-ratio-cell[data-value="N/A"] {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+/* Loading animation for expense ratio cells */
+.expense-ratio-loading {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
