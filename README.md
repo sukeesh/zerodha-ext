@@ -2,6 +2,9 @@
 
 A Chrome extension that automatically adds an "Expense Ratio" column to your Zerodha Kite holdings table, fetching data from Tijori Finance API with intelligent caching.
 
+<img width="1024" height="1024" alt="kite expense ratio" src="https://github.com/user-attachments/assets/3e546b68-c6e0-4a18-ba16-9ade4940591c" />
+
+
 ## What It Does
 
 - ✅ **Automatic Column Addition**: Adds "Exp. Ratio" column to your holdings table
